@@ -25,9 +25,34 @@ Develop a chatbot powered by GenAI to provide targeted assistance to developers 
   •	pipeline
 
 # Implementation:
-The input PDF file is converted into text within a document using the PyPDF2 library. Following this conversion, the text is further processed by employing the RecursiveCharacterTextSplitter to split it into smaller segments or chunks based on specific criteria.
-Text undergoes encoding using Hugging Face embeddings, leveraging the capabilities of the "hkunlp/instructor-large" model. This process involves transforming the text into a numerical representation that captures the semantic meaning and context of the words and phrases.
-The text is stored into a database utilizing Chroma. This involves saving the processed text data into a structured storage system provided by Chroma, which offers efficient data management and retrieval capabilities.
-Loading the Hugging Face model involves initializing the specified model, denoted as "< zephyr-7b-beta or Xwin-LM-13B-V0.1 >," along with an autotokenizer. The autotokenizer automatically selects and configures the appropriate tokenizer based on the model being used, ensuring compatibility and optimal tokenization for text inputs. This combined setup enables efficient processing and utilization of the Hugging Face model for tasks such as text generation.
-Data retrieval using RAG (Retrieval Augmented Generation) with the retrievalQA method involves a process that integrates retrieval-based and generation-based techniques in natural language processing (NLP). In this context, the retrievalQA method utilizes a retriever to fetch relevant data from a knowledge base or corpus based on a given query or context. The retriever employs keyword matching models to identify and retrieve the most relevant information.
-Retrieved data is served as an input augmentation, This augmentation enhances the context and completeness of the input data by incorporating additional information from the retrieved sources. The augmented input is then passed through generative model< zephyr-7b-beta or Xwin-LM-13B-V0.1 >to generate responses, answers or summaries to the input and the specific task requirements.
+
+**Input Processing:**
+
+Utilization of PyPDF2 library to convert the input PDF file into text within a document.
+Employing RecursiveCharacterTextSplitter to segment the text into smaller chunks based on specific criteria based on our requirment.
+
+**Text Encoding:**
+
+Utilized the Hugging Face embeddings i.e "hkunlp/instructor-large" model, to encode the text.
+Transformation of text into a numerical representation capturing semantic meaning and context which signifies the Embedding.
+
+**Database Storage:**
+
+Utilization of Chroma for storing processed text data into a structured storage system.
+Efficient data management and retrieval capabilities provided by Chroma.
+
+**Hugging Face Model Initialization:**
+
+Initialization of specified Hugging Face model ("< zephyr-7b-beta or Xwin-LM-13B-V0.1 >") along with autotokenizer.
+Autotokenizer automatically configures appropriate tokenizer based on the model for optimal text processing.
+
+**Data Retrieval with RAG (Retrieval Augmented Generation):**
+
+Integration of retrieval-based and generation-based techniques in NLP.
+Utilization of retrievalQA method to fetch relevant data from knowledge base or corpus using a retriever.
+Employing keyword matching models to identify and retrieve most relevant information.
+
+**Input Augmentation:**
+
+Incorporation of retrieved data as input augmentation to enhance context and completeness.
+Augmented input passed through generative model ("< zephyr-7b-beta or Xwin-LM-13B-V0.1 >") for generating responses, answers, or summaries based on task requirements.
